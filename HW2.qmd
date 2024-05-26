@@ -1,0 +1,59 @@
+---
+title: "HW2"
+format: html
+editor: visual
+---
+
+# Task 1: Basic Vector practice
+
+### 1.
+
+```{r}
+pre <- c(130, 128, 116, 124, 133, 134, 118, 126, 114, 127, 141, 138, 128, 140, 137, 131, 120, 128, 139, 135)
+
+post <- c(114, 98, 113, 99, 107, 116, 113, 111, 119, 117, 101, 119, 130, 122, 106, 106, 124, 102, 117, 113)
+
+```
+
+### 2.
+```{r}
+names(pre) <- paste("Subject", 1:20, sep = "_")
+names(post) <- paste("Subject", 1:20, sep = "_")
+```
+
+### 3.
+```{r}
+change <- pre-post
+
+```
+
+### 4.
+```{r}
+mean(change)
+
+```
+
+### 5.
+```{r}
+decrease_indices <- which(change > 0)
+
+decrease <- change[decrease_indices]
+
+print(decrease)
+
+```
+
+### 6.
+```{r}
+increase_indices <- which(change < 0)
+
+increase <- change[increase_indices]
+
+increase
+```
+
+### 7.
+```{r}
+mean(decrease)
+```
+
