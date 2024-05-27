@@ -425,29 +425,15 @@ Subject_18 Subject_19 Subject_20
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(aftertreatment) <span class="ot">&lt;-</span> names1</span>
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>change <span class="ot">&lt;-</span> pretreatment<span class="sc">-</span>aftertreatment</span>
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>my_df1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">patient =</span> names1, <span class="at">pre_bp =</span> pretreatment, <span class="at">post_bp =</span> aftertreatment,  <span class="at">diff_bp=</span>change)</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>my_df1<span class="sc">$</span>postbp120 <span class="ot">&lt;-</span> my_df1<span class="sc">$</span>post_bp<span class="sc">&lt;</span><span class="dv">120</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>my_df1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>              patient pre_bp post_bp diff_bp postbp120
-Subject_1   Subject_1    138     105      33      TRUE
-Subject_2   Subject_2    135     136      -1     FALSE
-Subject_3   Subject_3    147     123      24     FALSE
-Subject_4   Subject_4    117     130     -13     FALSE
-Subject_5   Subject_5    152     134      18     FALSE
-Subject_6   Subject_6    134     143      -9     FALSE
-Subject_7   Subject_7    114     135     -21     FALSE
-Subject_8   Subject_8    121     139     -18     FALSE
-Subject_9   Subject_9    131     120      11     FALSE
-Subject_10 Subject_10    130     124       6     FALSE</code></pre>
-</div>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>my_df1<span class="sc">$</span>postbp120 <span class="ot">&lt;-</span> my_df1<span class="sc">$</span>post_bp<span class="sc">&lt;</span><span class="dv">120</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="section-12" class="level3">
 <h3 class="anchored" data-anchor-id="section-12">2.</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="ot">&lt;-</span> <span class="fu">list</span>(my_df1,my_df)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>my_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">treatment =</span> my_df1,<span class="at">placebo=</span>my_df)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>my_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="ot">&lt;-</span> <span class="fu">list</span>(my_df1,my_df)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>my_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">treatment =</span> my_df1,<span class="at">placebo=</span>my_df)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>my_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$treatment
               patient pre_bp post_bp diff_bp postbp120
@@ -490,7 +476,7 @@ Subject_20 Subject_20    135     113      22      TRUE</code></pre>
 <section id="section-13" class="level3">
 <h3 class="anchored" data-anchor-id="section-13">3.</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>my_list[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>my_list[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$treatment
               patient pre_bp post_bp diff_bp postbp120
@@ -505,7 +491,7 @@ Subject_8   Subject_8    121     139     -18     FALSE
 Subject_9   Subject_9    131     120      11     FALSE
 Subject_10 Subject_10    130     124       6     FALSE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>my_list[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>my_list[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>              patient pre_bp post_bp diff_bp postbp120
 Subject_1   Subject_1    138     105      33      TRUE
@@ -519,7 +505,7 @@ Subject_8   Subject_8    121     139     -18     FALSE
 Subject_9   Subject_9    131     120      11     FALSE
 Subject_10 Subject_10    130     124       6     FALSE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>my_list<span class="sc">$</span>treatment</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>my_list<span class="sc">$</span>treatment</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>              patient pre_bp post_bp diff_bp postbp120
 Subject_1   Subject_1    138     105      33      TRUE
@@ -534,8 +520,11 @@ Subject_9   Subject_9    131     120      11     FALSE
 Subject_10 Subject_10    130     124       6     FALSE</code></pre>
 </div>
 </div>
+</section>
+<section id="section-14" class="level3">
+<h3 class="anchored" data-anchor-id="section-14">4.</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>my_list[[<span class="dv">2</span>]][<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>my_list[[<span class="dv">2</span>]][<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           pre_bp
 Subject_1     130
@@ -558,6 +547,124 @@ Subject_17    120
 Subject_18    128
 Subject_19    139
 Subject_20    135</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="task-4-control-flow-practice" class="level2">
+<h2 class="anchored" data-anchor-id="task-4-control-flow-practice">Task 4: Control Flow Practice</h2>
+<section id="section-15" class="level3">
+<h3 class="anchored" data-anchor-id="section-15">1.</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>my_df1<span class="sc">$</span>status <span class="ot">&lt;-</span> <span class="fu">character</span>(<span class="dv">10</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>my_df1<span class="sc">$</span>status <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(my_df1<span class="sc">$</span>post_bp <span class="sc">&lt;=</span> <span class="dv">120</span>, <span class="st">"optimal"</span>,</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">ifelse</span>(my_df1<span class="sc">$</span>post_bp <span class="sc">&gt;</span> <span class="dv">120</span> <span class="sc">&amp;</span> my_df1<span class="sc">$</span>post_bp <span class="sc">&lt;</span> <span class="dv">130</span>, <span class="st">"borderline"</span>, </span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">ifelse</span>(my_df1<span class="sc">$</span>post_bp <span class="sc">&gt;=</span> <span class="dv">130</span>, <span class="st">"high"</span>, <span class="cn">NA</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-16" class="level3">
+<h3 class="anchored" data-anchor-id="section-16">2.</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>my_list[[<span class="dv">1</span>]]<span class="sc">$</span>status <span class="ot">&lt;-</span> <span class="fu">character</span>(<span class="dv">10</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(my_list[[<span class="dv">1</span>]])) {</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (my_list[[<span class="dv">1</span>]]<span class="sc">$</span>post_bp[i] <span class="sc">&lt;=</span> <span class="dv">120</span>) {</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    my_list[[<span class="dv">1</span>]]<span class="sc">$</span>status[i] <span class="ot">=</span> <span class="st">"optimal"</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (my_list[[<span class="dv">1</span>]]<span class="sc">$</span>post_bp[i] <span class="sc">&gt;</span> <span class="dv">120</span> <span class="sc">&amp;</span> my_list[[<span class="dv">1</span>]]<span class="sc">$</span>post_bp[i] <span class="sc">&lt;</span> <span class="dv">130</span>) {</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>   my_list[[<span class="dv">1</span>]]<span class="sc">$</span>status[i] <span class="ot">=</span> <span class="st">"borderline"</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (my_list[[<span class="dv">1</span>]]<span class="sc">$</span>post_bp[i] <span class="sc">&gt;=</span> <span class="dv">130</span>) {</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>    my_list[[<span class="dv">1</span>]]<span class="sc">$</span>status[i] <span class="ot">=</span> <span class="st">"high"</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-17" class="level3">
+<h3 class="anchored" data-anchor-id="section-17">3.</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>my_list[[<span class="dv">2</span>]]<span class="sc">$</span>status <span class="ot">&lt;-</span> <span class="fu">character</span>(<span class="dv">20</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(my_list[[<span class="dv">2</span>]])) {</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (my_list[[<span class="dv">2</span>]]<span class="sc">$</span>post_bp[i] <span class="sc">&lt;=</span> <span class="dv">120</span>) {</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    my_list[[<span class="dv">2</span>]]<span class="sc">$</span>status[i] <span class="ot">=</span> <span class="st">"optimal"</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (my_list[[<span class="dv">2</span>]]<span class="sc">$</span>post_bp[i] <span class="sc">&gt;</span> <span class="dv">120</span> <span class="sc">&amp;</span> my_list[[<span class="dv">2</span>]]<span class="sc">$</span>post_bp[i] <span class="sc">&lt;</span> <span class="dv">130</span>) {</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>   my_list[[<span class="dv">2</span>]]<span class="sc">$</span>status[i] <span class="ot">=</span> <span class="st">"borderline"</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (my_list[[<span class="dv">2</span>]]<span class="sc">$</span>post_bp[i] <span class="sc">&gt;=</span> <span class="dv">130</span>) {</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    my_list[[<span class="dv">2</span>]]<span class="sc">$</span>status[i] <span class="ot">=</span> <span class="st">"high"</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="task-5-function-writing" class="level2">
+<h2 class="anchored" data-anchor-id="task-5-function-writing">Task 5: Function Writing</h2>
+<section id="section-18" class="level3">
+<h3 class="anchored" data-anchor-id="section-18">1.</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>compute_summary <span class="ot">&lt;-</span> <span class="cf">function</span>(my_list, <span class="at">stat =</span> <span class="st">"mean"</span>) {</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Function to extract summary function</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  my_fun <span class="ot">&lt;-</span> <span class="fu">get</span>(stat)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Extracting data frames from the list</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  treatment <span class="ot">&lt;-</span> my_list[[<span class="dv">1</span>]]</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>  placebo <span class="ot">&lt;-</span> my_list[[<span class="dv">2</span>]]</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Extracting statistics for treatment data frame</span></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>  treatment_summary <span class="ot">&lt;-</span> <span class="fu">sapply</span>(treatment[<span class="fu">c</span>(<span class="st">"pre_bp"</span>, <span class="st">"post_bp"</span>, <span class="st">"diff_bp"</span>)], my_fun)</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Extracting statistics for placebo data frame</span></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>  placebo_summary <span class="ot">&lt;-</span> <span class="fu">sapply</span>(placebo[<span class="fu">c</span>(<span class="st">"pre_bp"</span>, <span class="st">"post_bp"</span>, <span class="st">"diff_bp"</span>)], my_fun)</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Naming the results</span></span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>  names_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">paste0</span>(<span class="st">"treatment_pre_bp_"</span>, stat), <span class="fu">paste0</span>(<span class="st">"treatment_pre_bp_"</span>, stat),<span class="fu">paste0</span>(<span class="st">"treatment_diff_bp_"</span>, stat),<span class="fu">paste0</span>(<span class="st">"placebo_pre_bp_"</span>, stat), <span class="fu">paste0</span>(<span class="st">"placebo_post_bp_"</span>, stat),<span class="fu">paste0</span>(<span class="st">"placebo_diff_bp_"</span>, stat))</span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Creating a named vector of results</span></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">c</span>(treatment_summary, placebo_summary)</span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(result) <span class="ot">&lt;-</span> names_vec</span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Returning the result as a named vector</span></span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)</span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span><span class="fu">compute_summary</span>(my_list )</span>
+<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> treatment_pre_bp_mean  treatment_pre_bp_mean treatment_diff_bp_mean 
+                131.90                 128.90                   3.00 
+   placebo_pre_bp_mean   placebo_post_bp_mean   placebo_diff_bp_mean 
+                129.35                 112.35                  17.00 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span><span class="fu">compute_summary</span>(my_list, <span class="at">stat =</span> <span class="st">"sd"</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> treatment_pre_bp_sd  treatment_pre_bp_sd treatment_diff_bp_sd 
+           12.242458            11.179843            18.475209 
+   placebo_pre_bp_sd   placebo_post_bp_sd   placebo_diff_bp_sd 
+            8.034629             8.646721            12.396944 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span><span class="fu">compute_summary</span>(my_list, <span class="at">stat =</span> <span class="st">"var"</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> treatment_pre_bp_var  treatment_pre_bp_var treatment_diff_bp_var 
+            149.87778             124.98889             341.33333 
+   placebo_pre_bp_var   placebo_post_bp_var   placebo_diff_bp_var 
+             64.55526              74.76579             153.68421 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span><span class="fu">compute_summary</span>(my_list, <span class="at">stat =</span> <span class="st">"min"</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> treatment_pre_bp_min  treatment_pre_bp_min treatment_diff_bp_min 
+                  114                   105                   -21 
+   placebo_pre_bp_min   placebo_post_bp_min   placebo_diff_bp_min 
+                  114                    98                    -5 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span><span class="fu">compute_summary</span>(my_list, <span class="at">stat =</span> <span class="st">"max"</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> treatment_pre_bp_max  treatment_pre_bp_max treatment_diff_bp_max 
+                  152                   143                    33 
+   placebo_pre_bp_max   placebo_post_bp_max   placebo_diff_bp_max 
+                  141                   130                    40 </code></pre>
 </div>
 </div>
 

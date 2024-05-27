@@ -107,14 +107,9 @@ names(aftertreatment) <- names1
 change <- pretreatment-aftertreatment
 my_df1 <- data.frame(patient = names1, pre_bp = pretreatment, post_bp = aftertreatment,  diff_bp=change)
 my_df1$postbp120 <- my_df1$post_bp<120
-my_df1
 ```
 
 ### 2.
-
-```{r}
-```
-
 
 ```{r}
  
@@ -131,8 +126,92 @@ my_list[1]
 my_list[[1]]
 my_list$treatment
 ```
-
+### 4.
 ```{r}
 my_list[[2]][2]
 ```
+
+## Task 4: Control Flow Practice
+
+### 1.
+```{r}
+my_df1$status <- character(10)
+my_df1$status <- ifelse(my_df1$post_bp <= 120, "optimal",
+                  ifelse(my_df1$post_bp > 120 & my_df1$post_bp < 130, "borderline", 
+                  ifelse(my_df1$post_bp >= 130, "high", NA)))
+```
+
+### 2.
+```{r}
+my_list[[1]]$status <- character(10)
+
+for (i in 1:nrow(my_list[[1]])) {
+  if (my_list[[1]]$post_bp[i] <= 120) {
+    my_list[[1]]$status[i] = "optimal"
+  } else if (my_list[[1]]$post_bp[i] > 120 & my_list[[1]]$post_bp[i] < 130) {
+   my_list[[1]]$status[i] = "borderline"
+  } else if (my_list[[1]]$post_bp[i] >= 130) {
+    my_list[[1]]$status[i] = "high"
+  }
+}
+```
+
+
+### 3.
+```{r}
+my_list[[2]]$status <- character(20)
+
+for (i in 1:nrow(my_list[[2]])) {
+  if (my_list[[2]]$post_bp[i] <= 120) {
+    my_list[[2]]$status[i] = "optimal"
+  } else if (my_list[[2]]$post_bp[i] > 120 & my_list[[2]]$post_bp[i] < 130) {
+   my_list[[2]]$status[i] = "borderline"
+  } else if (my_list[[2]]$post_bp[i] >= 130) {
+    my_list[[2]]$status[i] = "high"
+  }
+}
+```
+
+## Task 5: Function Writing
+
+### 1.
+```{r}
+compute_summary <- function(my_list, stat = "mean") {
+  
+  # Function to extract summary function
+  my_fun <- get(stat)
+  
+  # Extracting data frames from the list
+  treatment <- my_list[[1]]
+  placebo <- my_list[[2]]
+  
+  # Extracting statistics for treatment data frame
+  treatment_summary <- sapply(treatment[c("pre_bp", "post_bp", "diff_bp")], my_fun)
+  
+  # Extracting statistics for placebo data frame
+  placebo_summary <- sapply(placebo[c("pre_bp", "post_bp", "diff_bp")], my_fun)
+  
+  # Naming the results
+  names_vec <- c(paste0("treatment_pre_bp_", stat), paste0("treatment_pre_bp_", stat),paste0("treatment_diff_bp_", stat),paste0("placebo_pre_bp_", stat), paste0("placebo_post_bp_", stat),paste0("placebo_diff_bp_", stat))
+  
+  # Creating a named vector of results
+  result <- c(treatment_summary, placebo_summary)
+  names(result) <- names_vec
+  
+  # Returning the result as a named vector
+  return(result)
+}
+
+result <-compute_summary(my_list )
+result
+result <-compute_summary(my_list, stat = "sd")
+result
+result <-compute_summary(my_list, stat = "var")
+result
+result <-compute_summary(my_list, stat = "min")
+result
+result <-compute_summary(my_list, stat = "max")
+result
+```
+
 
