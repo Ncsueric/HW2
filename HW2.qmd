@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-# Task 1: Basic Vector practice
+## Task 1: Basic Vector practice
 
 ### 1.
 
@@ -18,8 +18,9 @@ post <- c(114, 98, 113, 99, 107, 116, 113, 111, 119, 117, 101, 119, 130, 122, 10
 ### 2.
 
 ```{r}
-names(pre) <- paste("Subject", 1:20, sep = "_")
-names(post) <- paste("Subject", 1:20, sep = "_")
+names <- paste("Subject", 1:20, sep = "_")
+names(pre) <- names
+names(post) <- names
 ```
 
 ### 3.
@@ -62,3 +63,76 @@ increase
 ```{r}
 mean(decrease)
 ```
+
+## Task 2: Basic Data Frame practice
+
+### 1.
+
+```{r}
+my_df <- data.frame(patient = names, pre_bp = pre, post_bp = post,  diff_bp=change)
+
+```
+
+### 2.
+
+```{r}
+negative_bp_changes <- subset(my_df, diff_bp < 0)
+```
+
+### 3.
+
+```{r}
+my_df$postbp120 <- my_df$post_bp<120
+
+```
+
+### 4.
+
+```{r}
+knitr::kable(my_df)
+```
+
+## Task 3: List practice
+
+### 1.
+
+```{r}
+pretreatment <- c(138, 135, 147, 117, 152, 134, 114, 121, 131, 130)
+
+aftertreatment <- c(105, 136, 123, 130, 134, 143, 135, 139, 120, 124)
+
+names1 <- paste("Subject", 1:10, sep = "_")
+names(pretreatment) <- names1
+names(aftertreatment) <- names1
+change <- pretreatment-aftertreatment
+my_df1 <- data.frame(patient = names1, pre_bp = pretreatment, post_bp = aftertreatment,  diff_bp=change)
+my_df1$postbp120 <- my_df1$post_bp<120
+my_df1
+```
+
+### 2.
+
+```{r}
+```
+
+
+```{r}
+ 
+
+my_list <- list(my_df1,my_df)
+my_list <- list(treatment = my_df1,placebo=my_df)
+my_list
+```
+
+### 3.
+
+```{r}
+my_list[1]
+my_list[[1]]
+my_list$treatment
+```
+
+```{r}
+my_list[[2]][2]
+```
+
