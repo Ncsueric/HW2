@@ -16,24 +16,28 @@ post <- c(114, 98, 113, 99, 107, 116, 113, 111, 119, 117, 101, 119, 130, 122, 10
 ```
 
 ### 2.
+
 ```{r}
 names(pre) <- paste("Subject", 1:20, sep = "_")
 names(post) <- paste("Subject", 1:20, sep = "_")
 ```
 
 ### 3.
+
 ```{r}
 change <- pre-post
 
 ```
 
 ### 4.
+
 ```{r}
 mean(change)
 
 ```
 
 ### 5.
+
 ```{r}
 decrease_indices <- which(change > 0)
 
@@ -44,6 +48,7 @@ print(decrease)
 ```
 
 ### 6.
+
 ```{r}
 increase_indices <- which(change < 0)
 
@@ -53,7 +58,7 @@ increase
 ```
 
 ### 7.
+
 ```{r}
 mean(decrease)
 ```
-

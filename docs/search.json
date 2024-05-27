@@ -1,0 +1,9 @@
+[
+  {
+    "objectID": "HW2.html",
+    "href": "HW2.html",
+    "title": "HW2",
+    "section": "",
+    "text": "Task 1: Basic Vector practice\n\n1.\n\npre &lt;- c(130, 128, 116, 124, 133, 134, 118, 126, 114, 127, 141, 138, 128, 140, 137, 131, 120, 128, 139, 135)\n\npost &lt;- c(114, 98, 113, 99, 107, 116, 113, 111, 119, 117, 101, 119, 130, 122, 106, 106, 124, 102, 117, 113)\n\n\n\n2.\n\nnames(pre) &lt;- paste(\"Subject\", 1:20, sep = \"_\")\nnames(post) &lt;- paste(\"Subject\", 1:20, sep = \"_\")\n\n\n\n3.\n\nchange &lt;- pre-post\n\n\n\n4.\n\nmean(change)\n\n[1] 17\n\n\n\n\n5.\n\ndecrease_indices &lt;- which(change &gt; 0)\n\ndecrease &lt;- change[decrease_indices]\n\nprint(decrease)\n\n Subject_1  Subject_2  Subject_3  Subject_4  Subject_5  Subject_6  Subject_7 \n        16         30          3         25         26         18          5 \n Subject_8 Subject_10 Subject_11 Subject_12 Subject_14 Subject_15 Subject_16 \n        15         10         40         19         18         31         25 \nSubject_18 Subject_19 Subject_20 \n        26         22         22 \n\n\n\n\n6.\n\nincrease_indices &lt;- which(change &lt; 0)\n\nincrease &lt;- change[increase_indices]\n\nincrease\n\n Subject_9 Subject_13 Subject_17 \n        -5         -2         -4 \n\n\n\n\n7.\n\nmean(decrease)\n\n[1] 20.64706"
+  }
+]
